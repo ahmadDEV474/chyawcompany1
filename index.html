@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Recruitment</title>
+
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f7fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #0052cc, #007bff);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+
+
+.form-section {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.form-section h2 {
+    font-size: 2rem;
+    color: #0052cc;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.form-section h4 {
+    font-size: 1.5rem;
+    color: #0052cc;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+
+.form-section p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.recruitment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.recruitment-form h3 {
+    font-size: 1.5rem;
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-align:right;
+}
+
+label {
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 0.5rem;
+    display: block;
+    text-align:right;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="url"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    text-align: center;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background: linear-gradient(135deg, #0052cc, #007bff);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #003b99, #0056cc);
+}
+
+footer {
+    background: #0052cc;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .form-section {
+        padding: 1.5rem;
+    }
+
+    .recruitment-form {
+        gap: 1rem;
+    }
+
+  
+}
+    .header-banner {
+    width: 20%;
+    height: 20;
+}
+
+#progress-bar-container {
+    display: none;
+    margin: 20px auto;
+    width: 80%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#progress-bar {
+    width: 0;
+    height: 100%;
+    background: #4CAF50;
+    transition: width 0.4s ease;
+}
+
+        
+    </style>
+
+    </head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="h1h1">هەلی کار</h1>
+            <img src="logo.png" alt="Company Recruitment Banner" class="header-banner">
+        </div>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h4>تکایە فۆرمەکە پڕ بکەرەوە</h4>
+            <p>پڕکردنەوەی فۆرمی هەلی کار لە کۆمپانیای چیاو</p>
+
+         <form name="company" method="POST" class="recruitment-form">
+                <h3>زانیاری کەسی</h3>
+                <label for="Name">: ناوی سیانی</label>
+                <input type="text" id="Name" name="Name" required>
+
+                <label for="age">: تەمەن</label>
+                <input type="number" id="age" name="age" required>
+
+             <div>
+                <label for="mobile phone">: ژمارە موبایل</label><br>
+                <input type="tel" id="mobile phone" name="mobile phone" pattern="07\d{9}" required title="Mobile number must start with 07 and contain exactly 11 digits."><br><br>
+             </div>
+
+                <label for="dob">: ڕۆژی لە دایک بوون</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="birthplace">لە کوێ لە دایک بویت ؟</label>
+                <input type="text" id="birthplace" name="birthplace">
+
+                <label for="gender">ڕەگەز</label>
+             <select id="gender" name="gender">
+                  <option value="male">نێر</option>
+                  <option value="female">مێ</option>
+                  <option value="other">هیچیان</option>
+             </select>
+
+                 <!-- Personal Status -->
+             <div class="form-group">
+            
+                <label>: باری کەسی</label>
+             <select id="personalStatus" name="personalStatus">
+                  <option value="Single">سەڵت</option>
+                  <option value="Married">خێزاندار</option>
+             </select>
+             </div>
+
+          <!-- Academic Degree -->
+             <div class="form-group">
+                <label for="degree">چی بڕوانامەیەکت هەیە ؟</label>
+             <select id="degree" name="degree">
+                  <option value="None">هیچ</option>
+                  <option value="High School">ئامادەیی</option>
+                  <option value="Diploma">دیبلۆم</option>
+                  <option value="Bachelor">بەکالۆریۆس</option>
+                  <option value="Master">ماستەر</option>
+                  <option value="Doctorate">دکتۆرا</option>
+             </select>
+             </div>
+
+                <label for="specialization">لە چی بوارێکدا پسپۆری</label>
+                <input type="text" id="specialization" name="specialization">
+
+                <label for="languages">چەند زمان دەزانی</label>
+                <input type="number" id="languages" name="languages">
+
+         <!-- Talents and Abilities -->
+             <div class="form-group">
+                <label for="talents">بەهرە و تواناکانت چین ؟</label>
+                <textarea id="talents" name="talents"></textarea>
+             </div>
+
+         <!-- Computer Skills -->
+             <div class="form-group">
+                <label for="computerSkills">ئایا تا چی ئاستێک لە کۆمپیوتەر دەزانی  ؟</label>
+                <input type="text" id="computerSkills" name="computerSkills">
+             </div>
+
+         <!-- Work Experience -->
+             <div class="form-group">
+                <label for="workExperience">ئەزمونی کارکردنت لە چیدا هەیە و تا چەند باشیت ؟</label>
+                <textarea id="workExperience" name="workExperience"></textarea>
+             </div>
+
+             <div id="progress-bar-container" style="display: none; margin: 20px auto; width: 80%; height: 10px; background: #ddd; border-radius: 5px; overflow: hidden;">
+          <div id="progress-bar" style="width: 0; height: 100%; background: #4CAF50;"></div>
+         </div>
+      
+
+
+             <button type="submit" value="submit" name="submit">ناردن</button>
+          
+         </form>
+        </section>
+    </main>
+
+    <script>
+
+        /*
+        document.querySelector("form").addEventListener("submit", function(event) {
+            const age = document.getElementById("age").value;
+            if (age < 10 || age > 99) {
+                alert("تکایە با تەمەنت لە نێوان  10 بۆ 99 بێت");
+                event.preventDefault(); // Prevent form submission if validation fails
+            }
+        });
+
+
+        function validateMobileNumber() {
+            const mobileInput = document.getElementById('mobile');
+            const mobileValue = mobileInput.value;
+            const mobilePattern = /^07\d{9}$/;
+
+            if (!mobilePattern.test(mobileValue)) {
+                alert("تکایە با ژمارە مۆبایلەکەت 11 ژمارە بێت و");
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+
+          const scriptURL='https://script.google.com/macros/s/AKfycbyLpp3B8oRoDrL0whSbNES2EBLbWlgt9dPhesKTMp9bc7p5OLgZXPMgta4hgDMM7Iku6A/exec'
+          const form = document.forms['my_form']
+          form.addEventListener('submit',e =>{e.preventDefault()
+          fetch(scriptURL,{method :'post',body: new FormData(form)})
+          .then(Response => alert("Thank you!"))
+          .then(()=> {window.location.reload();})
+          .catch(error => console.error('Error!'))
+          })
+*/
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzy7lvaEYA6yxE5tkqIbxZMBCMDcxFURQAYmJl1qRzsoq6BjGsHT_E07jeZWdh-r2fh/exec';
+const form = document.forms['company'];
+
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const submitButton = form.querySelector('button[type="submit"]');
+    const progressBarContainer = document.getElementById('progress-bar-container');
+    const progressBar = document.getElementById('progress-bar');
+
+    // تعطيل الزر وإظهار شريط التقدم
+    submitButton.disabled = true;
+    submitButton.textContent = '...ناردن';
+    progressBarContainer.style.display = 'block';
+    progressBar.style.width = '0%';
+
+    let progress = 0;
+    const progressInterval = setInterval(() => {
+        if (progress < 90) {
+            progress += 5; // يزيد تدريجياً حتى 90%
+            progressBar.style.width = `${progress}%`;
+        } else {
+            clearInterval(progressInterval); // إيقاف التقدم عند 90%
+        }
+    }, 100); // كل 100 ملي ثانية
+
+    // إرسال البيانات باستخدام Fetch
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then((response) => {
+            clearInterval(progressInterval); // إيقاف التقدم التدريجي
+            progressBar.style.width = '100%'; // إكمال الشريط إلى 100%
+            setTimeout(() => {
+                alert("سوپاس! فۆرمەکەت بەسەرکەوتوویی نێردرا");
+                window.location.reload(); // إعادة تحميل الصفحة
+            }, 500); // تأخير صغير لإظهار اكتمال الشريط
+        })
+        .catch((error) => {
+            clearInterval(progressInterval); // إيقاف العداد
+            console.error('Error!', error);
+            alert("هەڵەیەک ڕوویدا، تکایە هەوڵ بدەوە!");
+            progressBarContainer.style.display = 'none';
+            submitButton.disabled = false;
+            submitButton.textContent = 'ناردن';
+        });
+});
+
+
+    </script>
+
+
+
+
+    <footer>
+        <h2>زۆر سوپاس</h2>
+    </footer>
+</body>
+</html>
